@@ -1,0 +1,6 @@
+#Requirements to run my flask application
+flask
+flask_sqlalchemy
+pymysql
+wtforms
+flask_wtf
