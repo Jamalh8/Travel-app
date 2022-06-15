@@ -58,7 +58,7 @@ def deletecountry(id):
         return redirect(url_for('read'))
 
 @app.route('/deleteuser/<int:id>', methods=['GET', 'POST'])
-def deletecountry(id):
+def deleteuser(id):
         join_country = CountryVisit.query.filter_by(user_id=id).all()
         user = User.query.filter_by(id=id).first()
         for item in join_country:
