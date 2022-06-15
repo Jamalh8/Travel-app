@@ -32,3 +32,23 @@ class TestBase(TestCase):
         db.session.remove()
         db.drop_all()
 
+class TestViewall(TestBase):
+    def test_home_get(self):
+        #Test home page functionality
+        response = self.client.get(url_for('read'))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Jamal', response.data)
+        self.assertIn(b'25', response.data)
+        self.assertIn(b'Male', response.data )
+        self.assertIn(b'Spain', response.data)
+
+class TestPostUser(TestBase):
+    def test_add_user(self):
+        #Test user creation functionality
+        response = self.client.post(url_for('createuser'), 
+        data =dict(name="Tim", age=50, gender='Other')
+        ,follow_redirects=True
+        )
+        self.assertIn(b'Tim', response.data)
+        self.assertIn(b'50', response.data )
+        self.assertIn(b'Other', response.data)
