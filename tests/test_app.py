@@ -65,10 +65,21 @@ class TestCreateCountry(TestBase):
         self.assertIn(b'Germany', response.data)
 
 class TestUpdateCountry(TestBase):
-    def test_update_user(self):
-        #Test user update functionality
+    def test_update_country(self):
+        #Test country update functionality
         response = self.client.post(url_for('updatecountry', follow_redirects=True,id=1, name="Spain"), 
         data =dict(name="Italy"),
         follow_redirects=True
         )
         self.assertIn(b"Italy", response.data)
+
+class TestUpdateUser(TestBase):
+    def test_update_user(self):
+        #Test user update functionality
+        response = self.client.post(url_for('updateuser', follow_redirects=True,id=1, name="Jamal", age=25, gender="Male"), 
+        data =dict(id=1, name="Sarah", age=30, gender="Female"),
+        follow_redirects=True
+        )
+        self.assertIn(b"Sarah", response.data)
+        self.assertIn(b"30", response.data)
+        self.assertIn(b"Female", response.data)
