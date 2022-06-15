@@ -46,7 +46,7 @@ class TestCreateUser(TestBase):
     def test_create_user(self):
         #Test user creation functionality
         response = self.client.post(url_for('createuser'), 
-        data =dict(name="Tim", age=50, gender='Other')
+        data =dict(id=2, name="Tim", age=50, gender='Other')
         ,follow_redirects=True
         )
         self.assertIn(b'Tim', response.data)
@@ -97,3 +97,15 @@ class TestDeleteCountry(TestBase):
         #Test country delete functionality
         response = self.client.post(url_for('deletecountry', id=1, name="Spain",follow_redirects=True))
         self.assertNotIn("Spain", str(response.data))
+
+class TestCountryLink(TestBase):
+    def test_country_lin(self):
+        #Test link functionality
+        response = self.client.post(url_for('connect'), 
+        data =dict(id=1, user_id=1, country_id=1)
+        ,follow_redirects=True
+        )
+        self.assertIn(b'Jamal', response.data)
+        self.assertIn(b'Spain', response.data )
+
+
