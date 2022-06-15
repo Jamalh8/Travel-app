@@ -19,9 +19,15 @@ class TestBase(TestCase):
         user1= User(name="Jamal",age=25,gender='Male')
         db.session.add(user1)
         db.session.commit()
+        user2= User(name="Dave", age=40, gender="Female")
+        db.session.add(user2)
+        db.session.commit()
         #Adding country to db
         country1 = Country(name="Spain")
         db.session.add(country1)
+        db.session.commit()
+        country2 = Country(name="USA")
+        db.session.add(country2)
         db.session.commit()
         #Linking user to country
         user_visit= CountryVisit(user_id=1,country_id=1)
@@ -162,6 +168,6 @@ class TestCountryLink(TestBase):
         ,follow_redirects=True
         )
         self.assertIn(b'Jamal', response.data)
-        self.assertIn(b'Spain', response.data )
+        self.assertIn(b'Spain', response.data)
 
 
