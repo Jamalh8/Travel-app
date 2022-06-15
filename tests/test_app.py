@@ -55,7 +55,7 @@ class TestCreateUser(TestBase):
 
 class TestCreateCountry(TestBase):
     def test_create_country(self):
-        #Test owner creation functionality
+        #Test country creation functionality
         response = self.client.post(url_for('createcountry'), 
         data =dict(name="Germany")
         ,follow_redirects=True
@@ -63,3 +63,12 @@ class TestCreateCountry(TestBase):
         country_name= Country.query.filter_by(name="Germany").first()
         self.assertEqual(country_name.name, "Germany")
         self.assertIn(b'Germany', response.data)
+
+class TestUpdateCountryTestBase):
+    def test_update_user(self):
+        #Test user update functionality
+        response = self.client.post(url_for('updatecountry', follow_redirects=True,id=1, name="Spain"), 
+        data =dict(name="Italy"),
+        follow_redirects=True
+        )
+        self.assertIn(b"Italy", response.data)
