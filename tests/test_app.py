@@ -84,10 +84,16 @@ class TestUpdateUser(TestBase):
         self.assertIn(b"30", response.data)
         self.assertIn(b"Female", response.data)
 
-class TestDeletUser(TestBase):
+class TestDeleteUser(TestBase):
     def test_delete_user(self):
         #Test user delete functionality
         response = self.client.post(url_for('deleteuser', id=1, name="Jamal", age=25, gender="Male"),follow_redirects=True)
         self.assertNotIn("Jamal", str(response.data))
         self.assertNotIn(25, response.data)
         self.assertNotIn("Male", str(response.data))
+
+class TestDeleteCountry(TestBase):
+    def test_delete_country(self):
+        #Test country delete functionality
+        response = self.client.post(url_for('deletecountry', id=1, name="Spain",follow_redirects=True))
+        self.assertNotIn("Spain", str(response.data))
