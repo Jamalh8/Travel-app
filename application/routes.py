@@ -56,3 +56,13 @@ def deletecountry(id):
         db.session.delete(country)
         db.session.commit()
         return redirect(url_for('read'))
+
+@app.route('/deleteuser/<int:id>', methods=['GET', 'POST'])
+def deletecountry(id):
+        join_country = CountryVisit.query.filter_by(user_id=id).all()
+        user = User.query.filter_by(id=id).first()
+        for item in join_country:
+            db.session.delete(item)         
+        db.session.delete(user)
+        db.session.commit()
+        return redirect(url_for('read'))
