@@ -42,8 +42,8 @@ class TestViewall(TestBase):
         self.assertIn(b'Male', response.data )
         self.assertIn(b'Spain', response.data)
 
-class TestPostUser(TestBase):
-    def test_add_user(self):
+class TestCreateUser(TestBase):
+    def test_create_user(self):
         #Test user creation functionality
         response = self.client.post(url_for('createuser'), 
         data =dict(name="Tim", age=50, gender='Other')
@@ -52,3 +52,14 @@ class TestPostUser(TestBase):
         self.assertIn(b'Tim', response.data)
         self.assertIn(b'50', response.data )
         self.assertIn(b'Other', response.data)
+
+class TestCreateCountry(TestBase):
+    def test_create_country(self):
+        #Test owner creation functionality
+        response = self.client.post(url_for('createcountry'), 
+        data =dict(name="Germany")
+        ,follow_redirects=True
+        )
+        country_name= Country.query.filter_by(name="Germany").first()
+        self.assertEqual(country_name.name, "Germany")
+        self.assertIn(b'Germany', response.data)
