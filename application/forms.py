@@ -3,7 +3,6 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, IntegerField
 from wtforms.validators import DataRequired, ValidationError
 from application.models import Country, User, CountryVisit
-# from wtforms_sqlalchemy.fields import QuerySelectField
 
 class CreateUser(FlaskForm):
     name = StringField('Name :', validators=[DataRequired()])
