@@ -90,6 +90,15 @@ class TestUpdateCountry(TestBase):
         follow_redirects=True
         )
         self.assertIn(b"Italy", response.data)
+
+class TestUpdateCountryValidator(TestBase):
+    def test_update_country_validator(self):
+        #Test country creation validation functionality
+        response = self.client.post(url_for('updatecountry',follow_redirects=True, id=1, name="Spain"), 
+        data =dict(id=1, name="Spain")
+        ,follow_redirects=True
+        )
+        self.assertIn(b'', response.data)
         
 
 class TestUpdateCountryView(TestBase):
@@ -111,6 +120,7 @@ class TestUpdateUser(TestBase):
         self.assertIn(b"Sarah", response.data)
         self.assertIn(b"30", response.data)
         self.assertIn(b"Female", response.data)
+
 
 class TestUpdateUserView(TestBase):
     def test_update_user_view(self):
