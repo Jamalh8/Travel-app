@@ -23,4 +23,16 @@ def createcountry():
         return redirect(url_for('read'))
     return render_template('create_country.html', form=form)
 
+@app.route('/updateuser/<int:id>', methods=['GET', 'POST'])
+def updateuser(id):
+    form = CreateUser()
+    user = User.query.filter_by(id=id).first()
+
+    if form.validate_on_submit():
+        user.name = form.name.data
+        user.age = form.age.data
+        user.gender = form.gender.data
+        db.session.commit()
+        return redirect(url_for('read'))
+    return render_template('update_user.html', form=form)
 
