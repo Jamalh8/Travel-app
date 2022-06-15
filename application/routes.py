@@ -46,3 +46,13 @@ def updatecountry(id):
         db.session.commit()
         return redirect(url_for('read'))
     return render_template('update_country.html', form=form)
+
+@app.route('/deletecountry/<int:id>', methods=['GET', 'POST'])
+def deletecountry(id):
+        join_country = CountryVisit.query.filter_by(country_id=id).all()
+        country = Country.query.filter_by(id=id).first()
+        for item in join_country:
+            db.session.delete(item)         
+        db.session.delete(country)
+        db.session.commit()
+        return redirect(url_for('read'))
