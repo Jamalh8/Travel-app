@@ -83,3 +83,11 @@ class TestUpdateUser(TestBase):
         self.assertIn(b"Sarah", response.data)
         self.assertIn(b"30", response.data)
         self.assertIn(b"Female", response.data)
+
+class TestDeletUser(TestBase):
+    def test_delete_user(self):
+        #Test user delete functionality
+        response = self.client.post(url_for('deleteuser', id=1, name="Jamal", age=25, gender="Male"),follow_redirects=True)
+        self.assertNotIn("Jamal", str(response.data))
+        self.assertNotIn(25, response.data)
+        self.assertNotIn("Male", str(response.data))
