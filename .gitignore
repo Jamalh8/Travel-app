@@ -5,3 +5,4 @@ htmlcov/
 *.db
 chromedriver
 /venv
+test
