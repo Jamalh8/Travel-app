@@ -80,3 +80,12 @@ def read():
         for visit in visits:
             country_names.append(Country.query.get(visit.country_id).name)
         user_dict[user.name] = country_names
+    country_dict= {}
+    for country in countrys:
+        visits = CountryVisit.query.filter_by(country_id=country.id).all()
+        user_name = []
+        for visit in visits:
+            user_name.append(User.query.get(visit.user_id).name)
+        country_dict[country.name] = user_name
+        
+    return render_template('read.html', users=users, countrys=countrys, country_visit=country_visit, user_dict=user_dict, country_dict=country_dict)
