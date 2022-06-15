@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travel tracker</title>
+    </head>
+    <style>
+        body{
+        background-color: rgb(162, 207, 252);
+    }
+    .container {
+  width: 90%;
+  height: 200px;
+  margin: auto;
+  padding: 15px;
+}
+
+.one {
+  width: 30%;
+  height: 200px;
+  float: left;
+}
+
+.two {
+  margin-left: 30%;
+  height: 200px;
+}
+    </style>
+    <body style="text-align: center">
+        <h1>Track the places you've been around the world!</h1>
+        <button><span><a href="{{ url_for('createuser') }}">Create Traveler</a></span></button>
+        <button><span><a href="{{ url_for('createcountry') }}">Enter Country</a></span></button>
+        <button><span><a href="{{ url_for('connect') }}">Add Country you visited</a></span></button>
+        <button><span><a href="{{ url_for('read') }}">See all Traveler(s) and the Country, or Countries, they visited</a></span></button>
+        {% block travel %}{% endblock travel %}
+    </body>
+</html>
