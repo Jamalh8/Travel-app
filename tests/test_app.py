@@ -64,7 +64,7 @@ class TestCreateCountry(TestBase):
         self.assertEqual(country_name.name, "Germany")
         self.assertIn(b'Germany', response.data)
 
-class TestUpdateCountryTestBase):
+class TestUpdateCountry(TestBase):
     def test_update_user(self):
         #Test user update functionality
         response = self.client.post(url_for('updatecountry', follow_redirects=True,id=1, name="Spain"), 
