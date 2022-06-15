@@ -25,6 +25,6 @@ class CreateCountry(FlaskForm):
             raise ValidationError ("This country name's already exists.")
 
 class Add(FlaskForm):
-    user_name= SelectField ("User :", choices=[],validators=[DataRequired()])
+    user_name= SelectField ("Traveler :", choices=[],validators=[DataRequired()])
     user_country= SelectField ("Country :", choices=[],validators=[DataRequired()])
     submit = SubmitField('Add!')
