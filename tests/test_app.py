@@ -99,9 +99,9 @@ class TestDeleteCountry(TestBase):
         self.assertNotIn("Spain", str(response.data))
 
 class TestCountryLink(TestBase):
-    def test_country_lin(self):
+    def test_country_link(self):
         #Test link functionality
-        response = self.client.post(url_for('connect'), 
+        response = self.client.get(url_for('connect'), 
         data =dict(id=1, user_id=1, country_id=1)
         ,follow_redirects=True
         )
