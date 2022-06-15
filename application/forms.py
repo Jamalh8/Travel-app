@@ -1,4 +1,3 @@
-from wsgiref.validate import validator
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, IntegerField
 from wtforms.validators import DataRequired, ValidationError
@@ -15,6 +14,7 @@ class CreateUser(FlaskForm):
         if name_object:
             raise ValidationError ("This user name's already taken, please pick another name.")
 
+
 class CreateCountry(FlaskForm):
     name = StringField('Name: ', validators=[DataRequired()])
     submit = SubmitField('Submit')
@@ -22,7 +22,7 @@ class CreateCountry(FlaskForm):
     def validate_name(self, name):
         name_object = Country.query.filter_by(name=name.data).first()
         if name_object:
-            raise ValidationError ("This country name's already exists.")
+            raise ValidationError ("This country name already exists.")
 
 class Add(FlaskForm):
     user_name= SelectField ("Traveler :", choices=[],validators=[DataRequired()])
