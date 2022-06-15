@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% block travel %}
+<h3>Please enter in details of the traveler:</h3>
+<div class='form'>
+    <form method='POST' action=''>
+        {{ form.hidden_tag() }}
+        {{ form.name.label }}
+        {{ form.name}}
+        {% if form.name.errors %}
+        <div class='error'>
+            {% for error in form.name.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        {{ form.age.label }}
+        {{ form.age }}
+        {% if form.age.errors %}
+        <div class='error'>
+            {% for error in form.age.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        {{ form.gender.label }}
+        {{ form.gender }}
+        {% if form.gender.errors %}
+        <div class='error'>
+            {% for error in form.gender.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        {{ form.submit }}
+    </form>
+</div>
+{% endblock travel %}
