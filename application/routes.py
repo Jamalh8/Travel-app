@@ -13,6 +13,14 @@ def createuser():
         return redirect(url_for('read'))
     return render_template('create_user.html', form=form)
 
-
+@app.route('/createcountry', methods=['GET', 'POST'])
+def createcountry():
+    form = CreateCountry()
+    if form.validate_on_submit():
+        country= Country(name=form.name.data)
+        db.session.add(country)
+        db.session.commit()
+        return redirect(url_for('read'))
+    return render_template('create_country.html', form=form)
 
 
