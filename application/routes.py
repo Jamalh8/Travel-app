@@ -36,3 +36,13 @@ def updateuser(id):
         return redirect(url_for('read'))
     return render_template('update_user.html', form=form)
 
+@app.route('/updatecountry/<int:id>', methods=['GET', 'POST'])
+def updatecountry(id):
+    form = CreateCountry()
+    country = Country.query.filter_by(id=id).first()
+
+    if form.validate_on_submit():
+        country.name = form.name.data
+        db.session.commit()
+        return redirect(url_for('read'))
+    return render_template('update_country.html', form=form)
