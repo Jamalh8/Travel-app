@@ -89,3 +89,23 @@ def read():
         country_dict[country.name] = user_name
         
     return render_template('read.html', users=users, countrys=countrys, country_visit=country_visit, user_dict=user_dict, country_dict=country_dict)
+
+@app.route('/add', methods=['GET', 'POST'])
+def connect():
+    connect = Add()
+    users = User.query.all()
+    countrys = Country.query.all()
+    for user in users:
+        connect.user_name.choices.append(
+            (user.id, f"{user.name}"))
+
+    for country in countrys:
+        connect.user_country.choices.append(
+            (country.id, f"{country.name}"))
+    
+    if connect.validate_on_submit():
+        add = CountryVisit(user_id=connect.user_name.data, country_id=connect.user_country.data)
+        db.session.add(add)
+        db.session.commit()
+        return redirect(url_for('read'))
+    return render_template('connect.html', form=connect, user=users, country=countrys)
