@@ -66,3 +66,17 @@ def deletecountry(id):
         db.session.delete(user)
         db.session.commit()
         return redirect(url_for('read'))
+
+@app.route('/', methods=['GET'])
+@app.route('/read', methods=['GET'])
+def read():
+    users = User.query.all()
+    countrys= Country.query.all()
+    country_visit= CountryVisit.query.all()
+    user_dict= {}
+    for user in users:
+        visits = CountryVisit.query.filter_by(user_id=user.id).all()
+        country_names = []
+        for visit in visits:
+            country_names.append(Country.query.get(visit.country_id).name)
+        user_dict[user.name] = country_names
