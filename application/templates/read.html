@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+{% block travel %}
+<section class="container">
+    <div class="one">
+    <b><h2 style="color:green">All Traveler(s) and Country, or Countries, they visited:</h2></b>
+    <p>
+    <b><h3> Travelers:</h3></b>
+    <br>
+    {% for user in users %}
+    <b>Name:</b> {{ user.name }}
+    <b>Age:</b> {{ user.age }}
+    <b>Gender:</b> {{ user.gender }}
+    <br>
+    <br>
+    <button style="background-color:rgb(8, 241, 249)"><span><a href="{{ url_for('updateuser', id=user.id) }}">Update</a></span></button>
+    <button style="background-color:rgb(255, 153, 0)"><span><a href="{{ url_for('deleteuser', id=user.id) }}">Delete</a></span></button>
+    <br>
+    <br>
+    {% endfor %}
+    <b><h3>Countries:</h3></b>
+    {% for country in countrys %}
+    {{ country.name }}
+    <br>
+    <br>
+    <button style="background-color:rgb(8, 241, 249)"><span><a href="{{ url_for('updatecountry', id=country.id) }}">Update</a></span></button>
+    <button style="background-color:rgb(255, 153, 0)"><span><a href="{{ url_for('deletecountry', id=country.id) }}">Delete</a></span></button>
+    <br>
+    <br>
+    {% endfor %}
+    </div>
+    <br>
+    <div class="two">
+    <b> <h3 style="color:red">The traveler and visited places:</h3></b>
+    {% for user_name, countrys in user_dict.items() %}
+    <br>
+    <b>Traveler:</b> {{ user_name }} <b>has visited:</b> {{ ', '.join(countrys) }}
+    <br>
+    {% endfor %}
+    <b> <h3 style="color:red">The country and the visitors they received:</h3></b>
+    {% for country_name, users in country_dict.items() %}
+    <br>
+    <b>Country:</b> {{ country_name }} <b>has been visited by:</b> {{ ', '.join(users) }}
+    <br>
+    {% endfor %}
+    </div>
+    </p>
+{% endblock travel %}
