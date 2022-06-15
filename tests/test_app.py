@@ -121,6 +121,15 @@ class TestUpdateUser(TestBase):
         self.assertIn(b"30", response.data)
         self.assertIn(b"Female", response.data)
 
+class TestUpdateUserValidator(TestBase):
+    def test_update_user_validator(self):
+        #Test user creation validation functionality
+        response = self.client.post(url_for('updateuser',follow_redirects=True, id=1, name="Jamal", age=25,gender="Male"), 
+        data =dict(id=1, name="Jamal", age=25,gender="Male")
+        ,follow_redirects=True
+        )
+        self.assertIn(b'', response.data)
+
 
 class TestUpdateUserView(TestBase):
     def test_update_user_view(self):
