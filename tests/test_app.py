@@ -53,6 +53,15 @@ class TestCreateUser(TestBase):
         self.assertIn(b'50', response.data )
         self.assertIn(b'Other', response.data)
 
+class TestCreateUserValidator(TestBase):
+    def test_create_user_validator(self):
+        #Test user creation validation functionality
+        response = self.client.post(url_for('createuser'), 
+        data =dict(id=1, name="Jamal", age=25, gender="Male")
+        ,follow_redirects=True
+        )
+        self.assertIn(b'', response.data)
+
 class TestCreateCountry(TestBase):
     def test_create_country(self):
         #Test country creation functionality
@@ -64,6 +73,15 @@ class TestCreateCountry(TestBase):
         self.assertEqual(country_name.name, "Germany")
         self.assertIn(b'Germany', response.data)
 
+class TestCreateCountryValidator(TestBase):
+    def test_create_country_validator(self):
+        #Test country creation validation functionality
+        response = self.client.post(url_for('createcountry'), 
+        data =dict(id=1, name="Spain")
+        ,follow_redirects=True
+        )
+        self.assertIn(b'', response.data)
+
 class TestUpdateCountry(TestBase):
     def test_update_country(self):
         #Test country update functionality
@@ -72,6 +90,16 @@ class TestUpdateCountry(TestBase):
         follow_redirects=True
         )
         self.assertIn(b"Italy", response.data)
+        
+
+class TestUpdateCountryView(TestBase):
+    def test_update_country_view(self):
+        #Test countryview without inputting update functionality
+        response = self.client.get(url_for('createcountry',follow_redirects=True, name=""), 
+        data =dict(name=""),
+        follow_redirects=True
+        )
+        self.assertIn(b"", response.data)
 
 class TestUpdateUser(TestBase):
     def test_update_user(self):
@@ -83,6 +111,15 @@ class TestUpdateUser(TestBase):
         self.assertIn(b"Sarah", response.data)
         self.assertIn(b"30", response.data)
         self.assertIn(b"Female", response.data)
+
+class TestUpdateUserView(TestBase):
+    def test_update_user_view(self):
+        #Test userview without inputting update functionality
+        response = self.client.get(url_for('createuser',follow_redirects=True, name=""), 
+        data =dict(name=""),
+        follow_redirects=True
+        )
+        self.assertIn(b"", response.data)
 
 class TestDeleteUser(TestBase):
     def test_delete_user(self):
