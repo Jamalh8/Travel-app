@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% block travel %}
+<h3>Pick your meal plan for your chosen day:</h3>
+<div class='form'>
+    <form method='POST' action=''>
+        {{ form.hidden_tag() }}
+        <br>
+        {{ form.user_name.label }}
+        {{ form.user_name }}
+        {% if form.user_name.errors %}
+        <div class='error'>
+            {% for error in form.user_name.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        <br>
+        {{ form.user_country.label }}
+        {{ form.user_country }}
+        {% if form.user_country.errors %}
+        <div class='error'>
+            {% for error in form.user_country.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        {{ form.submit }}
+    </form>
+</div>
+{% endblock travel %}
