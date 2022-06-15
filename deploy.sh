@@ -10,6 +10,6 @@ echo "installing requirements"
 pip3 install -r requirements.txt
 echo "killing any existing processes"
 sudo kill $(cat gunicornpidfile)
-python3 create.py
+python3 application/create.py
 echo "running on gunicorn with pid stored in file"
 gunicorn -b 0.0.0.0:5000 -w 4 application:app  -p gunicornpidfile
