@@ -66,10 +66,18 @@ For project tracking I used Kanban board through Jira. I progressed my project t
 
 I completed each tasks under a MoSCoW prioritisation. The MUST HAVE were completed first. Followed by the SHOULD HAVE. Finally a COULD HAVE task was also completed. There was one task to stop users entering in the same country more than once which I was unable to complete. This is something that I can work on for future developments. I have referenced pictures of my Jira Kanban board below to help visualise this process.
 
-![alt text]()
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/kanban-1.png)
 
 This shows the mid stage of my project where I've completed a fair amount of my tasks.
 
-![alt text]()
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/kanban-2.png)
 
-This shows the final Kanban board at the end of production.
+This shows the final Kanban board at the end of production. 
+
+A link to my Kanban board can be found by clicking [here](https://jamalh-888.atlassian.net/jira/software/projects/TA/boards/5)
+
+### Risk Assesment
+
+A short risk assesment was also carried out prior to project start. The aim of the risk assesment was to consider possible challenges/issues and have mitigations in place, if possible, to reduce the impact of these risks. I have provided a diagram of the risk assesment that was carried out below.
+
+![alt text]()
