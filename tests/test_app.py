@@ -47,12 +47,14 @@ class TestViewall(TestBase):
         self.assertIn(b'25', response.data)
         self.assertIn(b'Male', response.data )
         self.assertIn(b'Spain', response.data)
+        self.assertIn(b'Dave', response.data)
+        self.assertIn(b'USA', response.data)
 
 class TestCreateUser(TestBase):
     def test_create_user(self):
         #Test user creation functionality
         response = self.client.post(url_for('createuser'), 
-        data =dict(id=2, name="Tim", age=50, gender='Other')
+        data =dict(id=3, name="Tim", age=50, gender='Other')
         ,follow_redirects=True
         )
         self.assertIn(b'Tim', response.data)
@@ -106,7 +108,6 @@ class TestUpdateCountryValidator(TestBase):
         )
         self.assertIn(b'', response.data)
         
-
 class TestUpdateCountryView(TestBase):
     def test_update_country_view(self):
         #Test countryview without inputting update functionality

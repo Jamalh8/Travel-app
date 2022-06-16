@@ -70,6 +70,7 @@ class TestLinkCountry(TestBase):
         assert User.query.get(1).age == 25
         assert User.query.get(1).gender == 'Male'
         assert Country.query.get(1).name == 'Spain'
+        assert CountryVisit.query.get(1).id == 1
         assert CountryVisit.query.get(1).user_id == 1
         assert CountryVisit.query.get(1).country_id == 1
 
