@@ -21,3 +21,29 @@ Python Web Development
 Continuous Integration
 Cloud Fundamentals
 Databases
+
+## Table of content 
+
+[Project introduction](#Project-introduction)
+
+[Designing the application](#Designing-the-application)
+
+[Project tracking](#Project-tracking)
+
+[Risk assesment](#Risk-assesment)
+
+[Testing phase](#Testing-phase)
+
+[The application](#The-application)
+
+[CICD Pipeline](#CICD-Pipeline)
+
+[Known app issues](#Known-app-issues)
+
+[Challenges faced](#Challenges-faced)
+
+[Possible future changes to application](#Possible-future-changes-to-application)
+
+[Conclusion and learning from this project](#Conclusion-and-learning-from-this-project)
+
+[Credits](#Credits)
