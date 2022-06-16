@@ -48,4 +48,14 @@ Databases
 
 ## Designing the application
 
-![alt text]([https://github.com/Jamalh8/QA-finalproject/blob/dev/images%20and%20diagrams/ERD%20diagram.png](https://github.com/Jamalh8/Travel-app/blob/dev/images/db-model.png) "db-model")
+The first step was to come up with a model for my application. The miminum requirements for this project was to have a one-to-many database relationship. I pushed myself and decided to implement a many-to-many relationship for my application. 
+
+My idea was that a user can visit many countries, but also be able to display all the users that have visited that particular country. It can be a great competition between users to see who has visited the most countries!
+
+The entitiy relationship diagram demonstrates how I planned out my database models to acheive this. 
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/db-model.png "db-model")
+
+In order to acheive the many-to-many relationship I used a join table named 'CountryVisit' which takes in user_id and country_id as the foreign key. This model was put into practice in python and the result of this is shown on the below image.
+
+
