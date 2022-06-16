@@ -12,4 +12,4 @@ echo "killing any existing processes"
 sudo kill $(cat gunicornpidfile)
 python3 create.py
 echo "running on gunicorn with pid stored in file"
-python3 -m gunicorn -b -D 0.0.0.0:5000 -w 4 application:app  -p gunicornpidfile
+python3 -m gunicorn -D -b  0.0.0.0:5000 -w 4 application:app  -p gunicornpidfile
