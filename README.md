@@ -1,5 +1,5 @@
 # Travel-app
-An application to track travellers and destinations they've visited
+An application to track travellers and destinations they've visited.
 
 ## Table of content 
 
