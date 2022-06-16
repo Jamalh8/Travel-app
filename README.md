@@ -48,4 +48,4 @@ Databases
 
 ## Designing the application
 
-![alt text]([https://github.com/Jamalh8/QA-finalproject/blob/dev/images%20and%20diagrams/ERD%20diagram.png](https://github.com/Jamalh8/Travel-app/blob/dev/images/db-model.png) "ERD diagram")
+![alt text]([https://github.com/Jamalh8/QA-finalproject/blob/dev/images%20and%20diagrams/ERD%20diagram.png](https://github.com/Jamalh8/Travel-app/blob/dev/images/db-model.png) "db-model")
