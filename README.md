@@ -19,7 +19,7 @@ An application to track travellers and destinations they've visited.
 
 [CICD Pipeline](#CICD-Pipeline)
 
-[Known app issues](#Known-app-issues)
+[Known application issues](#Known-application-issues)
 
 [Challenges faced](#Challenges-faced)
 
