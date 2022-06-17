@@ -88,7 +88,7 @@ A short risk assesment was also carried out prior to project start. The aim of t
 
 Testing is a key element of the application production process. Testing allows me to check the codes that I have written and make sure that they are working. As this is not a full production app, that will be going live to customers, I'm not required to carry out any testing for performance or security. Therefore, I only carried out Unit testing and Selenium.  
 
-I started off with using testing and was able to achieve a coverage of 97% of my code. The result of this can be seen on the image below.
+I started off with using unit testing and was able to achieve a coverage of 97% of my code. The result of this can be seen on the image below.
 
 ![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/test-term-missing.png)
 
@@ -175,7 +175,13 @@ If I was to work on this application in the future my first priority would be to
 
 Secondly, I would seek to increase my test coverage to 100%, even though I used Selenium to test the missing coverage, I'd still like to get full coverage from the Unit test. 
 
-Finally, I would plan to expand the application to have more information to display. An idea I have would be to have a date the user has visited a country. Using details of the date it'd like to display the date they've visited a country and put them into cronological order. This way the user will be track when they visited the country 
+Finally, I would plan to expand the application to have more information to display. 
+
+- An idea I have would be to have a date the user has visited a country. Using details of the date it'd like to display the date they've visited a country and put them into cronological order. This way the user will be track when they visited the country.
+
+- Another expansion idea would be to display if a country has been visited by 'Male, 'Female', or 'Other' traveler the most. 
+
+- One final idea I also have, at this moment, would be to display users based on age range. This will allow us to see which age bracket has the most travelers.
 
 ### Conclusion and learning from this project
 
