@@ -146,7 +146,7 @@ Kanban board from Jira was used as my project tracker. GitHub was used as my VSC
 
 The below diagram explain the CI/CD pipeline that was implemented for my particular project. 
 
-![alt text]()
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/CICD-pipeline.png)
 
 A copy of a successful Jenkins build log can be found by clicking [here](https://github.com/Jamalh8/Travel-app/blob/dev/images/Jenkins-log.txt)
 
