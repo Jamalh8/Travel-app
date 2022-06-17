@@ -38,15 +38,15 @@ covered during training.
 This project will involve concepts from all core training modules; more
 specifically, this will involve:
 
--Project Management
--Python Fundamentals
--Python Testing
--Git
--Basic Linux
--Python Web Development
--Continuous Integration
--Cloud Fundamentals
--Databases
+- Project Management
+- Python Fundamentals
+- Python Testing
+- Git
+- Basic Linux
+- Python Web Development
+- Continuous Integration
+- Cloud Fundamentals
+- Databases
 
 ### Designing the application
 
