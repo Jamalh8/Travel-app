@@ -1,4 +1,4 @@
-# Travel-app
+# Travel-Tracker!
 An application to track travellers and destinations they've visited.
 
 ## Table of content 
@@ -86,7 +86,7 @@ A short risk assesment was also carried out prior to project start. The aim of t
 
 ### Unit Test
 
-Testing is a key element of the application production process. Testing allows me to check the codes that I have written and make sure that they are working. As this is not a full production app, that will be going live to customers, I'm not required to carry out any testing for performance or security. Therefore, I only carried out Unit testing and Selenium.  
+Testing is a key element of the application production process. Testing allows me to check the codes that I have written and make sure that they are working. As this is not a full production app, that will be going live to customers, I'm not required to carry out any testing for performance or security. Therefore, I only carried out Unit testing and Intergration testing using Selenium.  
 
 I started off with using unit testing and was able to achieve a coverage of 97% of my code. The result of this can be seen on the image below.
 
@@ -100,7 +100,7 @@ However, as seen from the above image I'm still missing the 3 percent coverage. 
 
 ### Selenium test
 
-The selenium test that was made.
+The selenium test that was made. This particular test first checks that a traveler can be added to the database. Then moves on to create a country. The final action is to link the traveler to the country and checks that the link has been successful and that this is reflected via the assertions of the database. 
 
 ![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/Selenium-test-show.png)
 
