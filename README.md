@@ -11,7 +11,9 @@ An application to track travellers and destinations they've visited.
 
 [Risk assesment](#Risk-assesment)
 
-[Testing phase](#Testing-phase)
+[Unit Test](#Unit-Test)
+
+[Selenium Test](#Selenium-Test)
 
 [The application](#The-application)
 
@@ -82,7 +84,7 @@ A short risk assesment was also carried out prior to project start. The aim of t
 
 ![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/risk-assesment.png)
 
-### Testing phase
+### Unit Test
 
 Testing is a key element of the application production process. Testing allows me to check the codes that I have written and make sure that they are working. As this is not a full production app, that will be going live to customers, I'm not required to carry out any testing for performance or security. Therefore, I only carried out Unit testing and Selenium.  
 
@@ -96,7 +98,7 @@ Once I was satisfied and successful with my test results I moved this over to Je
 
 However, as seen from the above image I'm still missing the 3 percent coverage. The code line 107-110 on routes was missing. To test this particular missing code I used selenium. I made 3 tests using selenium to which all 3 passed. The selenium tests that was carried out and the result can be seen from the images below.
 
-#### Selenium test
+### Selenium test
 
 The selenium test that was made.
 
@@ -106,4 +108,37 @@ The result of the selenium test.
 
 ![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/selenium-result-3test.png)
 
-The selenium test can only be run on an Ubunti 18.04 machine. 
+The selenium test can only be run on an Ubuntu 18.04 machine. My development VM was made using Ubuntu 18.04 hence why I was able to perform this test. However, both my Jenkins and deployment server are running on Ubuntu 20.04 hence why no selenium tests are carried out by my Jenkins VM.
+
+### The application
+
+This section will go through a brief overview of the application.
+
+Upon entering home page, which is also the read page, the user will be greeted with the below page.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/app-home.png)
+
+A navigation bar is visible at the top of the homepage with the options of 'Create Traveler', 'Enter Country', 'Add Country you visited', and 'See all Traveler(s) and Country, or Countries, they visited'.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/app-name-validator.png)
+
+The 'Create Traveler' section allows the user to enter in the name, age, and gender of the traveler. If the user tries to enter in an traveler name that's already in the database then they'd be given a message to pick another name and the input is not commited to the database.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/app-country-validator.png)
+
+The 'Enter Country' section allows the user to enter in the name of the country to the database. Again, if that country name already exists in the database then a customer validator is in place to inform the user and the country is not commited to the database.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/app-link-user-country.png)
+
+Once there is a user and country entered into the database, the section named 'Add Country you visited' allows the user to pick a traveler and the country they visited.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/app-home-user-country-fill.png)
+
+Once the user has picked the traveler, and country, they'll be shown on the home/read page. As you can see from the above image it'll show the traveler that visited the country and the visitors that country has received.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/app-read-all.png)
+
+Finally, the above image shows the outcome when multiple travelers and countries are added to the application. You'll see multiple users that have visited the countries they've mentioned, along with the visitors these particular countries have received.
+
+
+
