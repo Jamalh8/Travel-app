@@ -38,15 +38,15 @@ covered during training.
 This project will involve concepts from all core training modules; more
 specifically, this will involve:
 
-Project Management
-Python Fundamentals
-Python Testing
-Git
-Basic Linux
-Python Web Development
-Continuous Integration
-Cloud Fundamentals
-Databases
+-Project Management
+-Python Fundamentals
+-Python Testing
+-Git
+-Basic Linux
+-Python Web Development
+-Continuous Integration
+-Cloud Fundamentals
+-Databases
 
 ### Designing the application
 
@@ -140,5 +140,50 @@ Once the user has picked the traveler, and country, they'll be shown on the home
 
 Finally, the above image shows the outcome when multiple travelers and countries are added to the application. You'll see multiple users that have visited the countries they've mentioned, along with the visitors these particular countries have received.
 
+### CICD Pipeline
 
+Kanban board from Jira was used as my project tracker. GitHub was used as my VSC (Version Control System). Jenkins was used as my CI/CD server. Jenkins was also used to deploy my application to a Google cloud platform VM via Gunicorn. A GitHub webhook was integrated with my Jenkins, everytime I pushed changes up to my repositry it'll trigger Jenkins to automatically test, build, and deploy the application via Gunicorn.
+
+The below diagram explain the CI/CD pipeline that was implemented for my particular project. 
+
+![alt text]()
+
+A copy of a successful Jenkins build log can be found by clicking [here](https://github.com/Jamalh8/Travel-app/blob/dev/images/Jenkins-log.txt)
+
+### Known application issues
+
+* The only known issue within the application is the duplication of travelers visiting the same country more than once. For example, traveler "Dave" can enter that they've visited "Spain" more than once. This then creates duplicate output of "Dave" visiting "Spain" 2 times and with "Spain" having "Dave" visited it twice. 
+
+An image of this issue can be shown below.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/app-duplication-error.png)
+
+### Challenges faced
+
+I faced many challenges during this project. However, there were some that were more noteable than others.
+
+* Implemnting a many-to-many relationship. This was a challenge as I've ventured into the unknown without prior experience in this.
+* Creating the application according to the tasks I set. I had to be flexible and carry out some tasks not in the order I originally set them as.
+* Creating tests to achieve a high coverage.
+* Using selenium to test the code that my unit test did not cover.
+* Setting up environment variables to ensure there is no credentials leak.
+* Using Jenkins with a webhook that automatically builds, test, and deploys application to a production environment.
+
+### Possible future changes to application
+
+If I was to work on this application in the future my first priority would be to fix the known issues that I've listed above. 
+
+Secondly, I would seek to increase my test coverage to 100%, even though I used Selenium to test the missing coverage, I'd still like to get full coverage from the Unit test. 
+
+Finally, I would plan to expand the application to have more information to display. An idea I have would be to have a date the user has visited a country. Using details of the date it'd like to display the date they've visited a country and put them into cronological order. This way the user will be track when they visited the country 
+
+### Conclusion and learning from this project
+
+Overall, I'm very pleased with the outcome of this project. I'm proud that I've been able to implement a many-to-many relationship on my application. I ventured into the unkown and challenged myself. I was resilient and was not afraid to ask questions to things I had no or little knowledge of. 
+
+This project has given me the confidence going forward to continue learning and enhance upon these new skills I've learned along the way. 
+
+### Credits
+
+I would like to thank Leon, Earl, and Adam for their support in helping me deliver this project.
 
