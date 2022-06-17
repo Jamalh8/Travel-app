@@ -80,4 +80,30 @@ A link to my Kanban board can be found by clicking [here](https://jamalh-888.atl
 
 A short risk assesment was also carried out prior to project start. The aim of the risk assesment was to consider possible challenges/issues and have mitigations in place, if possible, to reduce the impact of these risks. I have provided a diagram of the risk assesment that was carried out below.
 
-![alt text]()
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/risk-assesment.png)
+
+### Testing phase
+
+Testing is a key element of the application production process. Testing allows me to check the codes that I have written and make sure that they are working. As this is not a full production app, that will be going live to customers, I'm not required to carry out any testing for performance or security. Therefore, I only carried out Unit testing and Selenium.  
+
+I started off with using testing and was able to achieve a coverage of 97% of my code. The result of this can be seen on the image below.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/test-term-missing.png)
+
+Once I was satisfied and successful with my test results I moved this over to Jenkins to carry out as part of my CI/CD pipeline. Using webhooks on Jenkins, everytime I ran a new build it would automatically carry out my tests. This allows me to focus on any changes to my application as Jenkins will automatically carry this out everytime I push changes up to GitHub. The HTML coverage from the jenkins machine can be seen on the below image.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/jenkins-html-cov.png)
+
+However, as seen from the above image I'm still missing the 3 percent coverage. The code line 107-110 on routes was missing. To test this particular missing code I used selenium. I made 3 tests using selenium to which all 3 passed. The selenium tests that was carried out and the result can be seen from the images below.
+
+#### Selenium test
+
+The selenium test that was made.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/Selenium-test-show.png)
+
+The result of the selenium test.
+
+![alt text](https://github.com/Jamalh8/Travel-app/blob/dev/images/selenium-result-3test.png)
+
+The selenium test can only be run on an Ubunti 18.04 machine. 
