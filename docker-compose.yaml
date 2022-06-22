@@ -1,0 +1,48 @@
+version: "3.8"
+services:
+  travel-db:
+    container_name: travel-db
+    image: jamalh8/travel-db:1
+    build: ./database
+    volumes:
+      - type: volume
+        source: sql
+        target: /var/lib/mysql
+    networks:
+      - travel-net
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+  travel-app:
+    container_name: travel-app
+    image: jamalh8/travel-app:1
+    build: ./
+    networks:
+      - travel-net
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
+      MY_KEY: ${MY_KEY}
+    deploy:
+      replicas: 3
+    depends_on:
+      - travel-db
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    networks:
+      - travel-net
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: ./nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+    depends_on:
+      - travel-app
+volumes:
+  sql:
+networks:
+  travel-net:
+    driver: overlay

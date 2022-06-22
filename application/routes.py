@@ -2,6 +2,7 @@ from application import app, db
 from application.models import User, Country, CountryVisit
 from application.forms import CreateCountry, CreateUser, Add
 from flask import render_template, redirect, url_for, request
+import os
 
 @app.route('/createuser', methods=['GET', 'POST'])
 def createuser():
@@ -70,6 +71,7 @@ def deleteuser(id):
 @app.route('/', methods=['GET'])
 @app.route('/read', methods=['GET'])
 def read():
+    host = os.getenv('HOSTNAME')
     users = User.query.all()
     countrys= Country.query.all()
     country_visit= CountryVisit.query.all()
@@ -88,7 +90,7 @@ def read():
             user_name.append(User.query.get(visit.user_id).name)
         country_dict[country.name] = user_name
         
-    return render_template('read.html', users=users, countrys=countrys, country_visit=country_visit, user_dict=user_dict, country_dict=country_dict)
+    return render_template('read.html', users=users, countrys=countrys, country_visit=country_visit, user_dict=user_dict, country_dict=country_dict, host=host)
 
 @app.route('/add', methods=['GET', 'POST'])
 def connect():
